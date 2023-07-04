@@ -52,6 +52,7 @@ No modules.
 | next\_hop\_ip\_address | The IP address of the next hop for the route. | `string` | no |
 | route\_address\_prefixes | The address prefixes for the route. | `list(string)` | no |
 | sku | The SKU of the virtual hub. | `string` | no |
+| tags | A mapping of tags to assign to the resource. | `map(string)` | no |
 
 ## Outputs
 
