@@ -15,5 +15,8 @@ resource "azurerm_virtual_hub" "this" {
       next_hop_ip_address = var.next_hop_ip_address
     }
   }
+
+  tags = var.tags
+
 }
 

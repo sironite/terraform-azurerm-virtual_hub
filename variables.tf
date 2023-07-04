@@ -52,3 +52,9 @@ variable "next_hop_ip_address" {
   description = "The IP address of the next hop for the route."
   default     = ""
 }
+
+variable "tags" {
+  type        = map(string)
+  description = "A mapping of tags to assign to the resource."
+  default     = {}
+}
