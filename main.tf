@@ -9,7 +9,7 @@ resource "azurerm_virtual_hub" "this" {
   sku                    = var.sku
 
   dynamic "route" {
-    for_each = var.enable_route != null ? [1] : []
+    for_each = var.enable_route != false ? [1] : []
     content {
       address_prefixes    = var.route_address_prefixes
       next_hop_ip_address = var.next_hop_ip_address
