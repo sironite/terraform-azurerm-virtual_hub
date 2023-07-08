@@ -46,9 +46,33 @@ module "vpn_gateway" {
   tags = var.tags
 }
 
-# module "vpn_gateway" {
-#   source = "./modules/azurerm_vpn_server_configuration"
-# }
+module "point_to_site_vpn_gateway" {
+  source = "./modules/azurerm_point_to_site_vpn_gateway"
+
+  count = var.enable_point_to_site_vpn_gateway ? 1 : 0
+
+  point_to_site_vpn_gateway_name      = var.point_to_site_vpn_gateway_name
+  resource_group_name                 = var.resource_group_name
+  location                            = var.location
+  scale_unit                          = var.point_to_site_vpn_gateway_scale_unit
+  virtual_hub_id                      = azurerm_virtual_hub.this.id
+  vpn_server_configuration_id         = var.vpn_server_configuration_id
+  dns_servers                         = var.dns_servers
+  routing_preference_internet_enabled = var.routing_preference_internet_enabled
+
+  connection_configuration_name            = var.connection_configuration_name
+  vpn_client_address_pool_address_prefixes = var.vpn_client_address_pool_address_prefixes
+
+  route_associated_route_table_id = var.route_associated_route_table_id
+  route_inbound_route_map_id      = var.route_inbound_route_map_id
+  route_outbound_route_map_id     = var.route_outbound_route_map_id
+
+  route_propagated_route_table_id    = var.route_propagated_route_table_id
+  route_propagated_route_table_label = var.route_propagated_route_table_label
+
+  tags = var.tags
+
+}
 
 module "express_route_gateway" {
   source = "./modules/azurerm_express_route_gateway"

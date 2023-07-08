@@ -8,9 +8,9 @@ content: |-
 
   # Usage - Module
 
-  ## VPN Server Configuration
+  ## Point-to-Site VPN Gateway
   ```hcl
-  {{ include "examples/VPNServerConfiguration/main.tf" }}
+  {{ include "examples/P2S/main.tf" }}
   ```
   {{ .Providers }}
 

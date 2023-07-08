@@ -7,28 +7,28 @@ resource "azurerm_vpn_gateway" "this" {
   routing_preference                    = var.routing_preference
   scale_unit                            = var.scale_unit
 
-dynamic "bgp_settings" {
-  for_each  = var.enable_bgp_settings!= false ? [1] : []
-  content {
-    asn         = var.bgp_settings_asn
-    peer_weight = var.bgp_settings_peer_weight
+  dynamic "bgp_settings" {
+    for_each = var.enable_bgp_settings != false ? [1] : []
+    content {
+      asn         = var.bgp_settings_asn
+      peer_weight = var.bgp_settings_peer_weight
 
-    dynamic "instance_0_bgp_peering_address" {
-      for_each = var.enable_instance_0_bgp_peering_address != false ? [1] : []
-      content {
-        custom_ips = var.instance_0_bgp_peering_address_custom_ips
+      dynamic "instance_0_bgp_peering_address" {
+        for_each = var.enable_instance_0_bgp_peering_address != false ? [1] : []
+        content {
+          custom_ips = var.instance_0_bgp_peering_address_custom_ips
+        }
+      }
+
+      dynamic "instance_1_bgp_peering_address" {
+        for_each = var.enable_instance_1_bgp_peering_address != false ? [1] : []
+        content {
+          custom_ips = var.instance_1_bgp_peering_address_custom_ips
+        }
       }
     }
 
-    dynamic "instance_1_bgp_peering_address" {
-      for_each = var.enable_instance_1_bgp_peering_address != false ? [1] : []
-      content {
-        custom_ips = var.instance_1_bgp_peering_address_custom_ips
-      }
-    }
   }
-  
-}
 
 
   tags = var.tags
