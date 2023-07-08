@@ -67,8 +67,8 @@ module "point_to_site_vpn_gateway" {
   route_inbound_route_map_id      = var.route_inbound_route_map_id
   route_outbound_route_map_id     = var.route_outbound_route_map_id
 
-  route_propagated_route_table_id    = var.route_propagated_route_table_id
-  route_propagated_route_table_label = var.route_propagated_route_table_label
+  route_propagated_route_table_ids    = var.route_propagated_route_table_ids
+  route_propagated_route_table_labels = var.route_propagated_route_table_labels
 
   tags = var.tags
 
