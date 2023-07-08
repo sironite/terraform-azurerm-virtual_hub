@@ -92,6 +92,7 @@ variable "enable_vpn_gateway" {
 variable "vpn_gateway_name" {
   type        = string
   description = "The name of the VPN gateway."
+  default     = ""
 }
 
 variable "bgp_route_translation_for_nat_enabled" {
@@ -109,6 +110,7 @@ variable "routing_preference" {
 variable "vpn_gateway_scale_unit" {
   type        = number
   description = "The scale unit for the VPN gateway."
+  default     = null
 }
 
 variable "bgp_settings_asn" {

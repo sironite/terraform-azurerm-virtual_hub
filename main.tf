@@ -23,7 +23,7 @@ resource "azurerm_virtual_hub" "this" {
 module "vpn_gateway" {
   source = "./modules/azurerm_vpn_gateway"
 
-  count = var.enabled_vpn_gateway ? 1 : 0
+  count = var.enable_vpn_gateway ? 1 : 0
 
   vpn_gateway_name                      = var.vpn_gateway_name
   resource_group_name                   = var.resource_group_name
@@ -53,9 +53,9 @@ module "vpn_gateway" {
 module "express_route_gateway" {
   source = "./modules/azurerm_express_route_gateway"
 
-  count = var.enabled_express_route_gateway ? 1 : 0
+  count = var.enable_express_route_gateway ? 1 : 0
 
-  name                          = var.express_route_gateway_name
+  express_route_gateway_name    = var.express_route_gateway_name
   resource_group_name           = var.resource_group_name
   location                      = var.location
   virtual_hub_id                = azurerm_virtual_hub.this.id
