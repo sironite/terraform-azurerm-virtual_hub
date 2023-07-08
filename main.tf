@@ -20,3 +20,14 @@ resource "azurerm_virtual_hub" "this" {
 
 }
 
+# module "vpn_gateway" {
+#   source = "./modules/azurerm_vpn_gateway"
+# }
+
+# module "vpn_gateway" {
+#   source = "./modules/azurerm_vpn_server_configuration"
+# }
+
+# module "vpn_gateway" {
+#   source = "./modules/azurerm_express_route_gateway"
+# }

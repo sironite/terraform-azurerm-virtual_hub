@@ -8,12 +8,11 @@ content: |-
 
   # Usage - Module
 
-  ## Virtual Hub within a Virtual WAN
-
-  ```hcl
-  {{ include "examples/virtual-hub-example/main.tf" }}
-  ```
+  ## ExpressRoute gateway
   
+  ```hcl
+  {{ include "examples/ExpressRouteGateway/main.tf" }}
+  ```
   {{ .Providers }}
 
   {{ .Modules }}
@@ -26,9 +25,7 @@ content: |-
 
   {{ .Footer }}
 
-recursive:
-  enabled: true
-
+  
 output:
   file: README.md
   mode: inject
