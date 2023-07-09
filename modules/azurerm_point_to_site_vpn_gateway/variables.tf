@@ -71,13 +71,13 @@ variable "route_outbound_route_map_id" {
 variable "route_propagated_route_table_ids" {
   type        = list(string)
   description = "The ID of the propagated route table for the Point-to-Site VPN Gateway."
-  default     = null
+  default     = []
 }
 
 variable "route_propagated_route_table_labels" {
   type        = list(string)
   description = "The label of the propagated route table for the Point-to-Site VPN Gateway."
-  default     = null
+  default     = []
 }
 
 variable "tags" {
