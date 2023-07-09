@@ -91,8 +91,11 @@ module "virtual_hub" {
 
 | Name | Description |
 |------|-------------|
+| express\_route\_gateway\_id | The ID of the ExpressRoute gateway. |
+| point\_to\_site\_vpn\_gateway\_id | The ID of the point-to-site VPN gateway. |
 | virtual\_hub\_id | The ID of the virtual hub. |
 | virtual\_hub\_name | The name of the virtual hub. |
+| vpn\_gateway\_id | The ID of the VPN gateway. |
 
 ## Related documentation
 <!-- END_TF_DOCS -->
