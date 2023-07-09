@@ -59,23 +59,6 @@ variable "tags" {
   default     = {}
 }
 
-variable "enable_express_route_gateway" {
-  type        = bool
-  description = "Whether to enable an ExpressRoute gateway for the virtual hub."
-  default     = false
-}
-variable "express_route_gateway_name" {
-  type        = string
-  description = "The name of the ExpressRoute gateway."
-  default     = ""
-}
-
-variable "express_route_scale_units" {
-  type        = number
-  description = "The number of scale units to allocate to the ExpressRoute gateway."
-  default     = null
-}
-
 variable "allow_non_virtual_wan_traffic" {
   type        = bool
   description = "Whether to allow non-virtual WAN traffic to flow through the ExpressRoute gateway."
@@ -92,7 +75,6 @@ variable "enable_vpn_gateway" {
 variable "vpn_gateway_name" {
   type        = string
   description = "The name of the VPN gateway."
-  default     = ""
 }
 
 variable "bgp_route_translation_for_nat_enabled" {
@@ -107,10 +89,9 @@ variable "routing_preference" {
   default     = "Microsoft Network"
 }
 
-variable "vpn_gateway_scale_unit" {
+variable "scale_unit" {
   type        = number
   description = "The scale unit for the VPN gateway."
-  default     = null
 }
 
 variable "bgp_settings_asn" {
@@ -154,80 +135,3 @@ variable "enable_instance_1_bgp_peering_address" {
   description = "Whether to enable the instance 1 BGP peering address for the VPN gateway."
   default     = false
 }
-
-variable "enable_point_to_site_vpn_gateway" {
-  type        = bool
-  description = "Whether to enable a point-to-site VPN gateway for the virtual hub."
-  default     = false
-}
-  
-variable "point_to_site_vpn_gateway_name" {
-  type        = string
-  description = "The name of the Point-to-Site VPN Gateway."
-  default     = ""
-}
-
-variable "point_to_site_vpn_gateway_scale_unit" {
-  type        = number
-  description = "The scale unit of the Point-to-Site VPN Gateway."
-  default     = null
-}
-
-variable "vpn_server_configuration_id" {
-  type        = string
-  description = "The ID of the VPN server configuration to use for the Point-to-Site VPN Gateway."
-  default = null
-}
-
-variable "dns_servers" {
-  type        = list(string)
-  description = "The list of DNS servers to use for the Point-to-Site VPN Gateway."
-  default     = []
-}
-
-variable "routing_preference_internet_enabled" {
-  type        = bool
-  description = "Whether or not to enable Internet routing preference for the Point-to-Site VPN Gateway."
-  default     = false
-}
-
-variable "connection_configuration_name" {
-  type        = string
-  description = "The name of the connection configuration for the Point-to-Site VPN Gateway."
-}
-
-variable "vpn_client_address_pool_address_prefixes" {
-  type        = list(string)
-  description = "The list of address prefixes to use for the VPN client address pool."
-}
-
-variable "route_associated_route_table_id" {
-  type        = string
-  description = "The ID of the associated route table for the Point-to-Site VPN Gateway."
-  default     = null
-}
-
-variable "route_inbound_route_map_id" {
-  type        = string
-  description = "The ID of the inbound route map for the Point-to-Site VPN Gateway."
-  default     = null
-}
-
-variable "route_outbound_route_map_id" {
-  type        = string
-  description = "The ID of the outbound route map for the Point-to-Site VPN Gateway."
-  default     = null
-}
-
-variable "route_propagated_route_table_ids" {
-  type        = list(string)
-  description = "The ID of the propagated route table for the Point-to-Site VPN Gateway."
-  default     = null
-}
-
-variable "route_propagated_route_table_labels" {
-  type        = list(string)
-  description = "The label of the propagated route table for the Point-to-Site VPN Gateway."
-  default     = null
-}
-

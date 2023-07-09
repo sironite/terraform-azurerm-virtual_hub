@@ -8,12 +8,10 @@ content: |-
 
   # Usage - Module
 
-  ## Virtual Hub within a Virtual WAN
-
+  ## Point-to-Site VPN Gateway
   ```hcl
-  {{ include "examples/virtual-hub-example/main.tf" }}
+  {{ include "examples/P2S/main.tf" }}
   ```
-  
   {{ .Providers }}
 
   {{ .Modules }}
@@ -26,9 +24,7 @@ content: |-
 
   {{ .Footer }}
 
-recursive:
-  enabled: true
-
+  
 output:
   file: README.md
   mode: inject
