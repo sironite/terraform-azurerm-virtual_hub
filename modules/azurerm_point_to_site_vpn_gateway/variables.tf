@@ -31,13 +31,11 @@ variable "vpn_server_configuration_id" {
 variable "dns_servers" {
   type        = list(string)
   description = "The list of DNS servers to use for the Point-to-Site VPN Gateway."
-  default     = []
 }
 
 variable "routing_preference_internet_enabled" {
   type        = bool
   description = "Whether or not to enable Internet routing preference for the Point-to-Site VPN Gateway."
-  default     = false
 }
 
 variable "connection_configuration_name" {
@@ -53,31 +51,26 @@ variable "vpn_client_address_pool_address_prefixes" {
 variable "route_associated_route_table_id" {
   type        = string
   description = "The ID of the associated route table for the Point-to-Site VPN Gateway."
-  default     = null
 }
 
 variable "route_inbound_route_map_id" {
   type        = string
   description = "The ID of the inbound route map for the Point-to-Site VPN Gateway."
-  default     = null
 }
 
 variable "route_outbound_route_map_id" {
   type        = string
   description = "The ID of the outbound route map for the Point-to-Site VPN Gateway."
-  default     = null
 }
 
 variable "route_propagated_route_table_ids" {
   type        = list(string)
   description = "The ID of the propagated route table for the Point-to-Site VPN Gateway."
-  default     = []
 }
 
 variable "route_propagated_route_table_labels" {
   type        = list(string)
   description = "The label of the propagated route table for the Point-to-Site VPN Gateway."
-  default     = []
 }
 
 variable "tags" {

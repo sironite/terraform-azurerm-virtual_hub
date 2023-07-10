@@ -15,12 +15,6 @@ resource "azurerm_point_to_site_vpn_gateway" "this" {
     }
     route {
       associated_route_table_id = var.route_associated_route_table_id
-      inbound_route_map_id      = var.route_inbound_route_map_id
-      outbound_route_map_id     = var.route_outbound_route_map_id
-      propagated_route_table {
-        ids    = var.route_propagated_route_table_ids
-        labels = var.route_propagated_route_table_labels
-      }
     }
   }
 
