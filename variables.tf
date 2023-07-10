@@ -160,7 +160,7 @@ variable "enable_point_to_site_vpn_gateway" {
   description = "Whether to enable a point-to-site VPN gateway for the virtual hub."
   default     = false
 }
-  
+
 variable "point_to_site_vpn_gateway_name" {
   type        = string
   description = "The name of the Point-to-Site VPN Gateway."
@@ -176,7 +176,7 @@ variable "point_to_site_vpn_gateway_scale_unit" {
 variable "vpn_server_configuration_id" {
   type        = string
   description = "The ID of the VPN server configuration to use for the Point-to-Site VPN Gateway."
-  default = null
+  default     = null
 }
 
 variable "dns_servers" {
